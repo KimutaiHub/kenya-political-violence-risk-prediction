@@ -1,0 +1,2 @@
+model,MAE,RMSE,R2,MAE_nonzero_weeks,MAE_severe_20plus,mean_prediction,max_prediction,alert_threshold,precision_fatal_week,recall_fatal_week,f1_fatal_week,true_positives,false_positives,false_negatives,true_negatives
+XGBoost,0.47830653190612793,1.3517940962272956,0.12957876920700073,1.2188602685928345,27.367740631103516,0.4895711,13.749615,1.0,0.5900123304562269,0.4895140664961637,0.5350852669835058,957,665,998,6940
