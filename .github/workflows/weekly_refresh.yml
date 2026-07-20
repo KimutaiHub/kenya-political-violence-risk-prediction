@@ -53,4 +53,5 @@ jobs:
           git config user.email "actions@github.com"
           git add data/Africa_aggregated_data.csv data/kenya_conflict_full.parquet data/county_vulnerability_index.csv
           git diff --quiet --cached || git commit -m "Weekly ACLED data refresh"
+          git pull --rebase origin main
           git push
