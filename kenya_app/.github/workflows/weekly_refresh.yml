@@ -1,0 +1,51 @@
+name: Weekly ACLED refresh
+
+# Rebuilds kenya_conflict_full.parquet from a fresh download of ACLED's
+# Aggregated Africa workbook (not the Event API) - see
+# pipeline/refresh_acled.py and README.md, "Data pipeline architecture".
+
+on:
+  schedule:
+    # Every Monday at 06:00 UTC
+    - cron: "0 6 * * 1"
+  workflow_dispatch: {}  # allows manual "Run workflow" from the Actions tab
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run refresh pipeline
+        env:
+          ACLED_EMAIL: ${{ secrets.ACLED_EMAIL }}
+          ACLED_PASSWORD: ${{ secrets.ACLED_PASSWORD }}
+        run: python pipeline/refresh_acled.py
+
+      # if: success() is explicit here (it's also GitHub Actions' default
+      # behavior for a step with no `if` at all) specifically so the
+      # circuit-breaker relationship is visible just by reading this file:
+      # a failed/validation-rejected refresh must never reach a commit.
+      #
+      # data/raw/*.xlsx (the full-Africa workbook) is deliberately NOT
+      # committed - see .gitignore. It's a large multi-country binary file
+      # that would bloat the repo's history every single week; it's kept
+      # locally (and in this workflow's own logs/cache) for debugging, but
+      # data/Africa_aggregated_data.csv - the Kenya-filtered, much smaller
+      # derived artifact - is committed, since that's the piece worth
+      # versioning for reproducibility.
+      - name: Commit updated data
+        if: success()
+        run: |
+          git config user.name "kenya-conflict-monitor-bot"
+          git config user.email "actions@github.com"
+          git add data/Africa_aggregated_data.csv data/kenya_conflict_full.parquet data/county_vulnerability_index.csv
+          git diff --quiet --cached || git commit -m "Weekly ACLED data refresh"
+          git push

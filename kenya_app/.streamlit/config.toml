@@ -1,0 +1,16 @@
+[theme]
+base = "dark"
+primaryColor = "#D4B483"
+backgroundColor = "#111827"
+secondaryBackgroundColor = "#1B2430"
+textColor = "#E5E7EB"
+font = "sans serif"
+
+[browser]
+gatherUsageStats = false
+
+# Note: server.headless is deliberately left unset here. Locally, Streamlit
+# defaults to headless=false and opens a browser tab automatically. If you
+# deploy this to a headless server yourself, pass --server.headless true on
+# the command line instead of hardcoding it here (Streamlit Community Cloud
+# sets this for you automatically).
