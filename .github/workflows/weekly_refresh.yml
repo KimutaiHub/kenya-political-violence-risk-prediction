@@ -13,6 +13,9 @@ on:
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: kenya_app
     steps:
       - uses: actions/checkout@v4
 
