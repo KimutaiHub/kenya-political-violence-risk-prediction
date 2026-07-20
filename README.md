@@ -71,7 +71,7 @@ Models compared in each stage: Dummy baseline, Random Forest, Gradient Boosting,
 
 ## Requirements
 
-Python 3.8 with: `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`, `xgboost`, `pytorch-tabnet`, `torch`, `shap`, `squarify`, `missingno`, `scipy`, `requests`
+Python 3.11 with: `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`, `xgboost`, `pytorch-tabnet`, `torch`, `shap`, `squarify`, `missingno`, `scipy`, `requests`
 
 ```bash
 pip install -r requirements.txt
