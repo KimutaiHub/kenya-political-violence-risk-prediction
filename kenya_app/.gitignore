@@ -1,0 +1,11 @@
+# The full-Africa raw workbook is large, multi-country, and re-downloaded
+# every refresh - keeping it locally for debugging is useful, committing a
+# new copy to git history every week is not. The derived, Kenya-filtered,
+# much smaller data/Africa_aggregated_data.csv IS committed (see
+# .github/workflows/weekly_refresh.yml) - that's the artifact worth
+# versioning for reproducibility.
+data/raw/
+
+__pycache__/
+*.pyc
+.DS_Store

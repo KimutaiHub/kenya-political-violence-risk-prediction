@@ -1,0 +1,52 @@
+# Requirements to run master_notebook.ipynb
+# top to bottom, including modelling, TabNet, SHAP, and the
+# choropleth section.
+#
+# These are NOT the same as kenya_app/requirements.txt (the deployment app
+# deliberately pins numpy<2 / scikit-learn<1.4 for Python 3.8 compatibility -
+# see kenya_app/README.md, "Model version compatibility"). This file is for
+# developing/running the notebook itself, where newer versions are fine.
+# If you export models from this environment for deployment, run them
+# through kenya_app/pipeline/refit_models.py afterward rather than copying
+# the .joblib files directly.
+#
+# Install with: pip install -r requirements.txt
+
+# Core
+pandas>=2.0
+numpy>=1.26
+scipy>=1.11
+
+# Visualization
+matplotlib>=3.8
+seaborn>=0.13
+missingno>=0.5
+squarify>=0.4
+
+# Modelling
+scikit-learn>=1.4
+xgboost>=2.0
+shap>=0.44
+
+# Deep tabular model (Section 6.11)
+torch>=2.0
+pytorch-tabnet>=4.0
+
+# Geospatial (imported in Section 6.16, choropleth)
+geopandas>=0.14
+
+# Utilities
+joblib>=1.4
+
+# Notebook runtime itself
+jupyter>=1.0
+ipykernel>=6.25
+notebook>=7.0
+
+# --- Alternative: exact environment snapshot -------------------------------
+# If you'd rather freeze your own exact working environment instead of using
+# the curated list above (e.g. to debug a version-specific issue), run:
+#     pip freeze > requirements-notebook-frozen.txt
+# This captures everything installed, including unrelated system/transitive
+# packages, so it's less portable across machines than the curated list
+# above - use it for debugging, not as the file teammates install from.
