@@ -69,7 +69,14 @@ Python 3 with: `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`, `xgbo
 ```bash
 pip install pandas numpy matplotlib seaborn scikit-learn xgboost pytorch-tabnet torch shap squarify missingno scipy requests
 ```
+## Authors
 
-## Usage
+Team Ctrl-Alt-Elite — Moringa School Data Science Capstone
 
-Place the two input CSVs alongside the notebook and run all cells top to bottom. The notebook writes the merged and cleaned datasets, trains and compares all models, and produces the vulnerability index and choropleth map (county boundaries are downloaded and cached on first run).
+- Kimutai Kevine
+- Mercy Wambui
+- Jackline Mwau
+- Richard Oketch
+- Winnie Nduva 
+- Reeves Gonah
+
