@@ -76,14 +76,5 @@ Python 3.11 with: `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`, `x
 ```bash
 pip install -r requirements.txt
 ```
-## Authors
 
-Team Ctrl-Alt-Elite - Moringa School Data Science Capstone
-
-- Kimutai Kevine
-- Mercy Wambui
-- Jackline Mwau
-- Richard Oketch
-- Winnie Nduva 
-- Reeves Gonah
 
