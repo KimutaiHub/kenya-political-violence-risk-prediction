@@ -1,5 +1,4 @@
 # Predicting the Severity of Political Violence in Kenya
-🔗 [Notion Project Tracker](https://app.notion.com/p/Predicting-the-Severity-of-Political-Violence-in-Kenya-38aef83d7f0980988c87cecaa2d6359a?source=copy_link)
 ---
 A machine learning pipeline predicting the severity of political violence - measured as fatality counts - across Kenya's 47 counties at weekly resolution, using historical conflict data enriched with demographic features.  
 
