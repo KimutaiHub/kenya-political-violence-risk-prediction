@@ -4,7 +4,7 @@ A machine learning pipeline predicting the severity of political violence - meas
 
 **Team:** Ctrl-Alt-Elite  
 **Contributors:** Kimutai Kevine, Mercy Wambui, Jackline Mwau, Richard Oketch, Winnie Nduva, Reeves Gonah  
-**Date:** June - July 2026 (Capstone Project)  
+**Date:** June - July 2026
 
 ---
 ## Elevator Pitch
