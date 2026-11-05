@@ -27,7 +27,7 @@ Answering this question required combining conflict event records with demograph
 
 | Source | Content | Coverage |
 |---|---|---|
-| [ACLED Africa Aggregated Data](https://acleddata.com/aggregated/aggregated-data-africa) | Conflict events and fatalities, filtered to Kenya (16,627 county-week rows) | 1997 – June 2026 |
+| [ACLED Africa Aggregated Data](https://acleddata.com/aggregated/aggregated-data-africa) | Conflict events and fatalities, filtered to Kenya (16,627 county-week rows) | 1997 – October 2026 |
 | [WorldPop PWD](https://www.worldpop.org/) | County-level population, density, area, and population-weighted density | Census snapshots 2000–2020 |
 
 WorldPop values are linearly interpolated between census snapshots, backfilled before 2000, and extrapolated after 2020 at 2.2% annual growth (KNBS 2019 inter-censal rate), then left-joined onto ACLED by county and year.
